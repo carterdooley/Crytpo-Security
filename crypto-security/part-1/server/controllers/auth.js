@@ -10,9 +10,9 @@ module.exports = {
         if (users[i].username === username) {
           const authenticated = bcrypt.compareSync(password, users[i].passwordHash)
           if (authenticated) {
-            let userToReturn = {...users[i]}
-            delete userToReturn.passwordHash
-            res.status(200).send(userToReturn)
+            let user2 = {...users[i]}
+            delete user2.passwordHash
+            res.status(200).send(user2)
           }
         }
       }
@@ -29,9 +29,9 @@ module.exports = {
         passwordHash
       }
       users.push(user)
-      let userToReturn = {...user}
-      delete userToReturn.passwordHash
-      res.status(200).send(userToReturn)
+      let user2 = {...user}
+      delete user2.passwordHash
+      res.status(200).send(user2)
       console.log(user)
   }
 
